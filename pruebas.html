@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Esfera de Palabras</title>
+    <script src="https://www.goat1000.com/tagcanvas.min.js"></script>
+    <style>
+        /* Estilo para centrar la esfera */
+        #tagCanvasContainer {
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor de la esfera -->
+    <div id="tagCanvasContainer">
+        <canvas width="500" height="500" id="tagCanvas">
+            <!-- Si el canvas no se carga, muestra este mensaje -->
+            <p>La esfera de palabras no se pudo cargar.</p>
+        </canvas>
+        <!-- Lista de palabras -->
+        <div id="tags" style="display: none;">
+            <ul>
+                <li><a href="https://www.google.com" target="_blank">Google</a></li>
+                <li><a href="https://www.youtube.com" target="_blank">YouTube</a></li>
+                <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+                <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
+                <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+                <li><a href="https://www.amazon.com" target="_blank">Amazon</a></li>
+                <li><a href="https://www.wikipedia.org" target="_blank">Wikipedia</a></li>
+                <li><a href="https://www.netflix.com" target="_blank">Netflix</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            if (!TagCanvas.Start('tagCanvas', 'tags', {
+                textColour: '#000000', // Letras en negro
+                outlineColour: '#ff0000', // Contorno en rojo
+                reverse: true,
+                depth: 0.8,
+                maxSpeed: 0.05,
+                minSpeed: 0.01,
+                weight: true,
+                weightMode: "both",
+                weightSizeMax: 30,
+                weightSizeMin: 15,
+                shadow: '#000',
+                shadowBlur: 2,
+                wheelZoom: false,
+                zoom: 1
+            })) {
+                // Si hay un error, esconder el contenedor del canvas
+                document.getElementById('tagCanvasContainer').style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>

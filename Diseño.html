@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/favicon-32x32.png" type="image/png">
+    <title>Diseño Avanzado de Aplicaciones Web</title>
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900&display=swap" rel="stylesheet">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="./css/estilosD.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- ID Particles.js -->
+<div id="particles-js"></div>
+
+<!-- Encabezado -->
+<footer> 
+<header class="contenedor1 header fade">
+    <h1>Diseño Avanzado de Aplicaciones Web</h1>
+</header>
+</footer>
+<!-- Sección de Patrones de Diseño -->
+<section id="patrones" class="seccion fade">
+    <div class="contenedor fade">
+        <h2>Patrones de Diseño</h2>
+        <p>En aplicaciones avanzadas, se adoptan patrones arquitectónicos que permiten una mayor flexibilidad y resiliencia, tales como:</p>
+        <ul>
+            <li><strong>Microservicios con Choreography:</strong> En lugar de orquestar los servicios, se permite que interactúen de manera reactiva y autónoma, mejorando la escalabilidad y la independencia de cada componente.</li>
+            <li><strong>Circuit Breaker:</strong> Un patrón clave para sistemas distribuidos, este patrón protege a la aplicación de sobrecargas en servicios externos, mejorando la tolerancia a fallos y la resiliencia general del sistema.</li>
+            <li><strong>CQRS (Command Query Responsibility Segregation):</strong> Este patrón separa las operaciones de lectura y escritura en diferentes modelos, optimizando así el rendimiento en aplicaciones con altos volúmenes de datos.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Gráfico con Chart.js -->
+<section id="grafico" class="seccion fade">
+    <div class="contenedor fade">
+        <h2>Tecnologías para Implementar Patrones de Diseño</h2>
+        <canvas id="myChart" width="400" height="200"></canvas>
+    </div>
+</section>
+
+<!-- Sección de Arquitectura Orientada a Eventos -->
+<section id="arquitectura-eventos" class="seccion fade">
+    <div class="contenedor fade">
+        <h2>Arquitectura Orientada a Eventos</h2>
+        <p>Para aplicaciones de gran escala, la arquitectura orientada a eventos es fundamental. Este paradigma permite la construcción de sistemas altamente reactivos, escalables y flexibles. Entre las principales características de esta arquitectura se incluyen:</p>
+        <ul>
+            <li><strong>Event Sourcing:</strong> En lugar de almacenar solo el estado actual, se registran todos los eventos que llevaron al estado actual, lo que proporciona una trazabilidad total y una gran flexibilidad para rehacer eventos pasados o construir proyecciones nuevas.</li>
+            <li><strong>Event-Driven Microservices:</strong> Los microservicios están diseñados para reaccionar a eventos en tiempo real, lo que permite sistemas más desacoplados y escalables.</li>
+            <li><strong>Mensajería Asíncrona:</strong> Tecnologías como Kafka o RabbitMQ permiten una comunicación eficiente y asíncrona entre microservicios, facilitando la integración de sistemas y mejorando el rendimiento.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Nueva Sección: Organización de un Sistema de Microservicios con Event Sourcing -->
+<section id="event-sourcing-microservicios" class="seccion fade">
+    <div class="contenedor fade">
+        <h2>Organización de un Sistema de Microservicios con Event Sourcing</h2>
+        <p>La combinación de microservicios con Event Sourcing permite que los servicios funcionen de manera independiente y reactiva, manteniendo una fuente de verdad consistente a través de eventos. A continuación, se muestra una ilustración de cómo se organiza este sistema:</p>
+        
+        <img src="https://example.com/diagram-microservices-event-sourcing.png" alt="Diagrama de Microservicios con Event Sourcing" style="width:100%; max-width:600px; margin: 20px auto; display:block;">
+
+        <p>En esta arquitectura:</p>
+        <ul>
+            <li><strong>Eventos de Dominio:</strong> Los eventos representan cambios de estado en la aplicación y son la única fuente de verdad, ya que almacenan todas las modificaciones realizadas en el sistema.</li>
+            <li><strong>Almacén de Eventos:</strong> Se utiliza un almacén de eventos especializado para guardar estos eventos de manera duradera. Sistemas como Kafka o RabbitMQ suelen usarse para esta tarea.</li>
+            <li><strong>Microservicios Reaccionan a Eventos:</strong> Cada microservicio escucha los eventos relevantes y actúa en consecuencia, actualizando su propio estado o interactuando con otros servicios.</li>
+            <li><strong>Proyecciones:</strong> A partir de los eventos almacenados, los sistemas pueden generar diferentes vistas o estados actuales de los datos, utilizando patrones como CQRS para optimizar la lectura y escritura.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Sección de Escalabilidad y Rendimiento -->
+<section id="escalabilidad" class="seccion fade">
+    <div class="contenedor fade">
+        <h2>Mejores Prácticas en Escalabilidad y Rendimiento</h2>
+        <p>La escalabilidad horizontal y vertical es esencial para aplicaciones web que requieren un rendimiento óptimo bajo cargas altas. Algunas prácticas avanzadas incluyen:</p>
+        <ul>
+            <li><strong>Escalabilidad Horizontal:</strong> Se logra mediante la distribución de la carga en varios servidores o nodos. Esto puede ser habilitado por tecnologías de contenedores como Docker y Kubernetes, que permiten gestionar réplicas de servicios de manera eficiente.</li>
+            <li><strong>Load Balancing:</strong> El balanceo de carga con herramientas como NGINX o HAProxy distribuye el tráfico de manera uniforme entre varios servidores, garantizando una disponibilidad constante y reduciendo la latencia.</li>
+            <li><strong>Caching Distribuido:</strong> Utilizar sistemas como Redis o Memcached para almacenar en caché datos críticos y evitar sobrecargar la base de datos en operaciones frecuentes de lectura.</li>
+            <li><strong>Base de Datos Distribuida:</strong> Bases de datos como Google Spanner o CockroachDB permiten la escalabilidad automática y la gestión de grandes volúmenes de datos distribuidos geográficamente.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Pie de Página -->
+<footer class="fade">
+    <p>&copy; 2024 Diseño Avanzado de Aplicaciones Web | Todos los derechos reservados</p>
+    <div class="redes-sociales">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+</footer>
+
+<script src="js/particles.min.js"></script>
+<script src="js/particlesDJS.js"></script>
+<script src="https://kit.fontawesome.com/a2e8d0339c.js"></script>
+
+<script>
+    // Configuración del gráfico usando Chart.js
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Microservicios', 'CQRS', 'Event Sourcing', 'Circuit Breaker'],
+            datasets: [{
+                label: 'Tecnologías más utilizadas',
+                data: [70, 45, 60, 55],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

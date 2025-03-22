@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/favicon-32x32.png" type="image/png">
+    <title>Infraestructura Web</title>
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900&display=swap" rel="stylesheet">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="./css/estilosI.css">
+    <!-- Prism.js para widgets de código -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+</head>
+<body>
+
+<!-- ID Particles.js para el fondo animado -->
+<div id="particles-js"></div>
+<footer>
+<header class="contenedor1 header fade">
+    <h1>Infraestructura y Despliegue</h1>
+</header>
+</footer>
+
+<!-- Sección de Infraestructura -->
+<section id="infraestructura" class="seccion fade">
+    <div class="contenedor fade">
+        <h2>Infraestructura y Despliegue</h2>
+        <p>Las aplicaciones se despliegan utilizando contenedores Docker orquestados con Kubernetes, aprovechando la infraestructura de nubes como AWS o GCP. Además, el pipeline CI/CD se automatiza con herramientas como Jenkins o GitLab CI.</p>
+        
+        <!-- Diagrama de infraestructura -->
+        <h3>Diagrama de Infraestructura</h3>
+        <img src="https://example.com/infraestructura-diagrama.png" alt="Diagrama de Infraestructura con Docker y Kubernetes" style="width:100%; max-width:600px; margin: 20px auto; display:block;">
+    </div>
+</section>
+
+<!-- Sección del Pipeline CI/CD con animación -->
+<section id="pipeline-ci-cd" class="seccion fade">
+    <div class="contenedor fade">
+        <h2>Pipeline CI/CD Automatizado</h2>
+        <p>Un pipeline CI/CD permite automatizar el proceso de construcción, prueba y despliegue de aplicaciones. A continuación se muestra un flujo típico usando Jenkins:</p>
+        
+        <!-- Animación de Pipeline CI/CD -->
+        <div class="pipeline-animation">
+            <ul>
+                <li>1. <span>Commit de código</span></li>
+                <li>2. <span>Compilación automática</span></li>
+                <li>3. <span>Pruebas unitarias</span></li>
+                <li>4. <span>Despliegue en staging</span></li>
+                <li>5. <span>Pruebas de integración</span></li>
+                <li>6. <span>Despliegue en producción</span></li>
+            </ul>
+        </div>
+        
+        <style>
+            /* Animación del pipeline CI/CD */
+            .pipeline-animation ul {
+                list-style-type: none;
+                padding: 0;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .pipeline-animation ul li {
+                position: relative;
+                padding: 10px 20px;
+                background-color: #f4f4f4;
+                border-radius: 10px;
+                margin: 0 10px;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .pipeline-animation ul li:hover {
+                transform: scale(1.1);
+                background-color: #e0e0e0;
+            }
+
+            .pipeline-animation ul li span {
+                display: block;
+                font-weight: bold;
+                color: #333;
+            }
+        </style>
+    </div>
+</section>
+
+<!-- Sección del software a utilizar -->
+<section id="OpciondeSofware" class="seccion contenedor fade">
+    <footer><h1>Software a utilizar</h1></footer>
+    <br>
+    <h3>Primera opción: Ubuntu Server 22.04 LTS</h3>
+    <ul>
+        <p>Ubuntu Server es una distribución Linux ampliamente utilizada para servidores debido a su seguridad, estabilidad y rendimiento. La versión LTS (Long-Term Support) asegura soporte por 5 años, lo cual es ideal para un proyecto a largo plazo.</p>
+    </ul>
+    <br>
+    <h3><strong>Ventajas:</strong></h3>
+    <ul>
+        <li>Software libre y de código abierto, sin costos de licencia, y con una comunidad extensa de soporte.</li>
+    </ul>
+    <br>
+    <h3>Entorno de Desarrollo Integrado (IDE): Visual Studio Code</h3>
+    <ul>
+        <p>Visual Studio Code es un IDE ligero, multiplataforma y altamente personalizable. Ofrece extensiones para múltiples lenguajes de programación y herramientas que facilitan el desarrollo.</p>
+    </ul>
+</section>
+
+<!-- Widget de código para automatización del despliegue con Jenkins -->
+<section id="codigo-ejemplo" class="seccion fade">
+    <div class="contenedor fade">
+        <h2>Ejemplo de Script para CI/CD con Jenkins</h2>
+        <p>Este script de Jenkinsfile automatiza el pipeline de despliegue de una aplicación web:</p>
+        
+        <!-- Widget de código -->
+        <pre><code class="language-groovy">
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'npm test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'kubectl apply -f deployment.yaml'
+            }
+        }
+    }
+    post {
+        success {
+            echo 'Despliegue completado exitosamente'
+        }
+        failure {
+            echo 'El despliegue ha fallado'
+        }
+    }
+}
+        </code></pre>
+    </div>
+</section>
+
+<!-- Sección Opción 2 de software -->
+<section id="OpciondeSofware2" class="seccion contenedor fade">
+    <h1>Segunda opción: Windows Server 2022</h1>
+    <ul>
+        <p>Windows Server es una opción sólida para entornos que ya están familiarizados con la suite de herramientas de Microsoft.</p>
+    </ul>
+    <br>
+    <h3><strong>Ventajas:</strong></h3>
+    <ul>
+        <li>Amplio soporte empresarial y fácil integración con otras soluciones de Microsoft.</li>
+    </ul>
+    <br>
+    <h1>Entorno de Desarrollo Integrado (IDE): Microsoft Visual Studio</h1>
+    <ul>
+        <p>Visual Studio es una potente herramienta de desarrollo que ofrece integración directa con plataformas como Azure y SQL Server.</p>
+    </ul>
+    <br>
+    <h1>Lenguaje de Programación: C# con el framework ASP.NET Core</h1>
+    <ul>
+        <p>ASP.NET Core es un framework de alto rendimiento y multiplataforma, optimizado para aplicaciones modernas basadas en la nube.</p>
+    </ul>
+</section>
+
+<script src="js/particles.min.js"></script>
+<script src="js/particlesIJS.js"></script>
+<script src="https://kit.fontawesome.com/a2e8d0339c.js"></script>
+
+</body>
+</html>

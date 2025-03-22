@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/favicon-32x32.png" type="image/png">
+    <title>Seguridad Web Avanzada</title>
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900&display=swap" rel="stylesheet">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="./css/estilosS.css">   
+    <!-- Prism.js para widget de código -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+</head>
+<body>
+<!-- ID Particles.js -->
+<div id="particles-js"></div>
+<footer>
+<header class="contenedor1 header fade">
+    <h1>Seguridad Avanzada en Aplicaciones Web</h1>
+</header>
+</footer>
+
+<!-- Sección de Seguridad Zero Trust -->
+<section id="seguridad" class="seccion fade">
+    <div class="contenedor fade">
+        <h2>Seguridad en Sistemas Distribuidos</h2>
+        <p>La seguridad es crítica en sistemas distribuidos y aplicaciones web. Las arquitecturas avanzadas requieren medidas estrictas para garantizar la protección de datos y la resistencia ante ataques. A continuación, se abordan algunos de los enfoques clave:</p>
+        
+        <h3>Zero Trust Architecture</h3>
+        <p>La arquitectura Zero Trust se basa en el principio de "nunca confiar, siempre verificar". Esto significa que ningún componente dentro o fuera de la red es confiable por defecto. Cada solicitud de acceso a un recurso debe ser autenticada y autorizada. Las características incluyen:</p>
+        <ul>
+            <li><strong>Autenticación Multifactor:</strong> Utilizar factores de autenticación como biometría, contraseñas y tokens.</li>
+            <li><strong>Microsegmentación:</strong> Dividir la red en segmentos más pequeños para controlar el tráfico entre ellos y limitar el alcance de los atacantes.</li>
+            <li><strong>Control de Acceso Dinámico:</strong> Las políticas de acceso son adaptativas y dependen de factores como la ubicación, el dispositivo, y el comportamiento del usuario.</li>
+        </ul>
+
+        <img src="https://example.com/diagrama-zero-trust.png" alt="Diagrama de Zero Trust Architecture" style="width:100%; max-width:600px; margin: 20px auto; display:block;">
+    </div>
+</section>
+
+<!-- Sección de Autenticación OAuth 2.0 -->
+<section id="oauth" class="seccion fade">
+    <div class="contenedor fade">
+        <h2>Autenticación y Autorización con OAuth 2.0</h2>
+        <p>OAuth 2.0 es un protocolo estándar para la autenticación delegada, permitiendo a las aplicaciones acceder a los recursos en nombre de un usuario sin exponer las credenciales. Se usa ampliamente en plataformas que requieren integración de terceros.</p>
+        
+        <h3>Flujo de Autenticación OAuth 2.0</h3>
+        <img src="https://example.com/diagrama-oauth2-flow.png" alt="Diagrama de flujo OAuth 2.0" style="width:100%; max-width:600px; margin: 20px auto; display:block;">
+        
+        <h3>Ejemplo de Solicitud de Token</h3>
+        <!-- Widget para código de ejemplo usando Prism.js -->
+        <pre><code class="language-javascript">
+fetch('https://api.oauth.com/token', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams({
+        'grant_type': 'authorization_code',
+        'code': 'authorization_code',
+        'redirect_uri': 'https://example.com/callback',
+        'client_id': 'your_client_id',
+        'client_secret': 'your_client_secret',
+    })
+})
+.then(response => response.json())
+.then(data => console.log(data));
+        </code></pre>
+    </div>
+</section>
+
+<!-- Sección sobre Content Security Policy (CSP) y CORS -->
+<section id="csp-cors" class="seccion fade">
+    <div class="contenedor fade">
+        <h2>Mitigación de Vulnerabilidades: CSP y CORS</h2>
+        <h3>Content Security Policy (CSP)</h3>
+        <p>Content Security Policy (CSP) es un estándar que ayuda a prevenir ataques de inyección de código como Cross-Site Scripting (XSS). Permite a los desarrolladores controlar qué recursos (scripts, estilos, imágenes, etc.) pueden ser cargados en una aplicación web.</p>
+        
+        <h3>Ejemplo de Configuración CSP</h3>
+        <!-- Widget para código de ejemplo usando Prism.js -->
+        <pre><code class="language-html">
+&lt;meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://apis.google.com; object-src 'none';"&gt;
+        </code></pre>
+
+        <h3>Cross-Origin Resource Sharing (CORS)</h3>
+        <p>CORS es un mecanismo que permite que recursos restringidos en una página web sean solicitados desde otro dominio fuera del dominio desde el cual se originó el recurso. La correcta configuración de CORS es esencial para evitar ataques de CSRF.</p>
+        
+        <h3>Ejemplo de Configuración CORS</h3>
+        <!-- Widget para código de ejemplo usando Prism.js -->
+        <pre><code class="language-javascript">
+// Ejemplo de configuración CORS en un servidor Node.js
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://example.com');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
+        </code></pre>
+    </div>
+</section>
+
+<!-- Sección de Seguridad en Microservicios -->
+<section id="microservicios" class="seccion fade">
+    <div class="contenedor fade">
+        <h2>Seguridad en Arquitecturas de Microservicios</h2>
+        <p>En sistemas basados en microservicios, la seguridad debe ser considerada a nivel de cada servicio. Esto incluye autenticación, autorización, encriptación y gestión de políticas a nivel granular.</p>
+        
+        <h3>Seguridad en Comunicación entre Microservicios</h3>
+        <ul>
+            <li><strong>Autenticación y Autorización con JWT:</strong> Utilizar JSON Web Tokens (JWT) para autenticar y autorizar solicitudes entre microservicios. Los tokens permiten gestionar el acceso sin necesidad de compartir credenciales.</li>
+            <li><strong>Encriptación de Tráfico:</strong> Utilizar TLS para encriptar las comunicaciones entre microservicios, garantizando la confidencialidad de los datos transmitidos.</li>
+            <li><strong>Control de Acceso Basado en Roles (RBAC):</strong> Aplicar RBAC para controlar el acceso a las funcionalidades específicas dentro de cada servicio.</li>
+        </ul>
+
+        <h3>Ejemplo de Token JWT</h3>
+        <!-- Widget para código de ejemplo usando Prism.js -->
+        <pre><code class="language-javascript">
+const jwt = require('jsonwebtoken');
+
+const token = jwt.sign({
+    userId: '12345',
+    role: 'admin'
+}, 'secretKey', { expiresIn: '1h' });
+
+console.log(token);
+        </code></pre>
+    </div>
+</section>
+
+<!-- Pie de Página -->
+<footer class="fade">
+    <p>&copy; 2024 Seguridad Avanzada en Aplicaciones Web | Todos los derechos reservados</p>
+    <div class="redes-sociales">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+</footer>
+
+<script src="js/particles.min.js"></script>
+<script src="js/particlesSJS.js"></script>
+<script src="https://kit.fontawesome.com/a2e8d0339c.js"></script>
+
+</body>
+</html>

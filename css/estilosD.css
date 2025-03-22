@@ -1,0 +1,102 @@
+/* ESTILOS GENERALES */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+body {
+    background-color:#000;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+#particles-js {
+	height: 100vh; 
+	width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+
+.contenedor {
+	width: 90%;
+	max-width: 1200px;
+    background-size: cover;
+    background-position:center;
+    text-align: justify;
+	margin-left: auto; 
+	margin-right: auto;
+    margin-top: 15px;
+    padding: 20px 30px;
+    position: relative;
+    z-index: 99;
+    opacity: .85;
+}
+
+.contenedor.header {
+    height: calc(100vh - 55px);
+    border: 3px solid #555555;
+}
+
+.fade {
+    transition: opacity 0.1s ease; /* Suaviza la transición de opacidad */
+    opacity: 1; /* Inicia con opacidad completa */
+}
+
+
+footer {
+    padding: 20px 0; /* Espaciado interno del pie de página */
+    color: #fff; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+}
+
+footer .contenedor p {
+    margin: 0;
+    padding-bottom: 10px; /* Separación entre el texto y el menú */
+}
+
+footer nav ul {
+    list-style: none; /* Quitar viñetas */
+    padding: 0;
+    margin: 0;
+}
+
+footer nav ul li {
+    display: inline-block; /* Mostrar los elementos del menú en línea */
+    margin: 0 10px; /* Separación entre enlaces */
+}
+
+footer nav ul li a {
+    color: #fff; /* Color de los enlaces */
+    text-decoration: none; /* Quitar subrayado */
+}
+
+footer nav ul li a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 200vh; /* Esto asegura que haya suficiente contenido para hacer scroll */
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+iframe {
+    transition: opacity 0.5s ease-out, transform 1s ease-out;
+    opacity: .5;
+}
+
+.scrolled iframe {
+    opacity: 1;
+    transform: translateY(-50px);
+}
